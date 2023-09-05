@@ -16,8 +16,7 @@ function App() {
   const token:any=localStorage.getItem("profile");
   
   console.log(token)
-  const likedata=useSelector((state:any)=>state.postReducer.post)
-  console.log(likedata)
+  
   return (
     <>
     <Navbar/>

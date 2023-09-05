@@ -17,8 +17,7 @@ const auth=async(req,res,next)=>{
             req.id=decodedData?.id
 
         }
-        res.cookie('cookieName',req.id, { maxAge: 900000, httpOnly: true });
-        res.cookie('hellov','vinay demo')
+        console.log(req.id)
         
 
 

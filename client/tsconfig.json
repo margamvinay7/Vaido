@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/postSlice.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,6 +1,6 @@
 import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit"
 import  authSlice from "./components/Auth/AuthSlice"
-import postSlice from "./components/post/postSlice"
+import postSlice from "./postSlice"
 
 const store=configureStore({
     reducer:{

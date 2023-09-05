@@ -2,7 +2,7 @@ import React from 'react'
 import {Card,TextField,CardContent, Typography,CardActions,Button} from '@mui/material'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createPost } from './post/postSlice'
+import { createPost } from '../postSlice'
 import FileBase from 'react-file-base64'
 import { useNavigate } from 'react-router-dom'
 

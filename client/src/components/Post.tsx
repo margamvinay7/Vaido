@@ -17,7 +17,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Logo from '../assets/react.svg'
 import { TextField,Button } from '@mui/material';
 import { Link} from 'react-router-dom';
-import { deletePost ,LikePost} from './post/postSlice';
+import { deletePost ,LikePost} from '../postSlice';
 import { useDispatch,useSelector } from 'react-redux';
 
 

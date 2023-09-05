@@ -15,6 +15,35 @@ const getPosts=async(req,res)=>{
     }
 }
 
+ const getSearch = async (req, res) => {
+   const {search}=req.params
+    try {
+        const title = new RegExp(search, "i");
+        console.log(title)
+
+        const postsdata = await posts.find({title});;
+console.log(postsdata)
+        res.json(postsdata);
+    } catch (error) {    
+        res.status(404).json({ message: error.message });
+    }
+}
+const getLikes=async(req,res)=>{
+    const {id}=req.params;
+
+    try{
+
+        const result=await posts.findById(id)
+        
+        
+      
+        res.status(201).json(result);
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
 const createPost=async(req,res)=>{
     const {title,creater,post,image}=req.body
     try{
@@ -51,17 +80,17 @@ const updatePost=async(req,res)=>{
 const likePost=async(req,res)=>{
     const {id}=req.params;
     
-    
+    console.log("likepost"+req.id)
     const post =await posts.findById(id);
     const index=post.likes.findIndex((id)=>id===String(req.id))
     if(index===-1){
-        post.likes.push(req.userId)
+        post.likes.push(req.id)
     }
     else{
-        post.likes=post.likes.filter((id)=>id !==String(req.userId))
+        post.likes=post.likes.filter((id)=>id !==String(req.id))
     }
 
 const updatedPost=await posts.findByIdAndUpdate(id,post,{new:true})
 }
 
-export {getPosts,createPost,updatePost,deletePost,likePost}
+export {getPosts,createPost,updatePost,deletePost,likePost,getLikes,getSearch}
